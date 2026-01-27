@@ -1,21 +1,30 @@
 # Access Log Threat Hunter
 
-A lightweight Node.js utility for analyzing web server access logs and flagging potentially suspicious requests.
+A lightweight Node.js command-line utility for analyzing web server access logs and flagging potentially suspicious activity.
 
 ## Overview
-This project parses standard Apache/Nginx-style access logs and applies rule-based detections to identify common web attack patterns such as SQL injection, XSS attempts, path traversal, scanner activity, and probing for sensitive files.
 
-The goal is to support basic triage and investigation workflows similar to those performed in a SOC environment.
+This project parses standard Apache/Nginx-style access logs and applies rule-based detections to identify common web attack patterns such as:
+
+- SQL injection attempts
+- Automated scanner activity
+- Path traversal
+- Probing for sensitive files
+
+The tool is designed to support basic triage and investigation workflows similar to those performed by a Tier 1 SOC analyst.
 
 ## Features
+
 - Parses access log lines into structured fields
 - Applies detection rules using regular expressions
-- Flags suspicious requests with severity levels
-- Generates JSON output for further review
+- Flags suspicious log entries with severity levels
+- Outputs a summarized JSON report for review
 
 ## Requirements
-- Node.js (no additional dependencies)
+
+- Node.js (no external dependencies)
 
 ## Usage
+
 ```bash
-node analyzer.js --in sample_logs/access.log
+node Analyzer.js --in sample_logs/access.log
